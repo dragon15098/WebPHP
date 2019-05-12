@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2019 at 07:21 AM
+-- Generation Time: May 12, 2019 at 04:09 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -30,15 +30,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `nguoi_dung` (
   `id` int(10) NOT NULL,
-  `ten_dang_nhap` varchar(255) NOT NULL,
-  `mat_khau` varchar(255) NOT NULL,
-  `ten_nguoi_dung` varchar(255) NOT NULL,
-  `quyen` varchar(255) NOT NULL,
+  `ten_dang_nhap` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
+  `mat_khau` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
+  `ten_nguoi_dung` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
+  `quyen` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
   `ngay_sinh` date DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `sdt` varchar(255) DEFAULT NULL,
-  `dia_chi` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `email` varchar(255) COLLATE utf8_vietnamese_ci DEFAULT NULL,
+  `sdt` varchar(255) COLLATE utf8_vietnamese_ci DEFAULT NULL,
+  `dia_chi` varchar(255) COLLATE utf8_vietnamese_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+--
+-- Dumping data for table `nguoi_dung`
+--
+
+INSERT INTO `nguoi_dung` (`id`, `ten_dang_nhap`, `mat_khau`, `ten_nguoi_dung`, `quyen`, `ngay_sinh`, `email`, `sdt`, `dia_chi`) VALUES
+(1, 'admin', 'admin', 'admintest', 'them_moi_san_pham', '2019-01-02', 'admin@gmail.com', '0123456789', 'Nguyễn Trãi, Thanh Xuân, Hà Nội');
 
 -- --------------------------------------------------------
 
@@ -47,18 +54,18 @@ CREATE TABLE `nguoi_dung` (
 --
 
 CREATE TABLE `nha_cung_cap` (
-  `ten_nha_cung_cap` varchar(255) NOT NULL,
-  `ma_nha_cung_cap` varchar(255) NOT NULL,
-  `dia_chi` varchar(255) NOT NULL,
-  `sdt` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `ten_nha_cung_cap` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
+  `ma_nha_cung_cap` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
+  `dia_chi` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
+  `sdt` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
   `so_tien_lai` int(10) NOT NULL,
   `so_san_pham_ban_duoc` int(10) NOT NULL,
-  `lien_he` varchar(255) NOT NULL,
+  `lien_he` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
   `mat_hang_ban_chay_nhat_id` int(10) NOT NULL,
   `so_luong_san_pham_ban_duoc_nhieu_nhat` int(10) NOT NULL,
   `id` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 -- --------------------------------------------------------
 
@@ -68,12 +75,12 @@ CREATE TABLE `nha_cung_cap` (
 
 CREATE TABLE `san_pham` (
   `id` int(10) NOT NULL,
-  `ten_san_pham` varchar(255) NOT NULL,
-  `ma_san_pham` varchar(255) NOT NULL,
-  `mo_ta` varchar(255) NOT NULL,
+  `ten_san_pham` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
+  `ma_san_pham` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
+  `mo_ta` varchar(255) COLLATE utf8_vietnamese_ci NOT NULL,
   `gia_san_pham` int(10) NOT NULL,
   `id_nha_cung_cap` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
 -- Indexes for dumped tables
@@ -106,7 +113,7 @@ ALTER TABLE `san_pham`
 -- AUTO_INCREMENT for table `nguoi_dung`
 --
 ALTER TABLE `nguoi_dung`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `nha_cung_cap`
